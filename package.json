@@ -1,0 +1,28 @@
+{
+  "name": "pirov2-plugins-walky",
+  "version": "1.0.0",
+  "description": "Walking plugin for pirov2",
+  "main": "walky.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gnshshraiGit/pirov2-plugins-walky.git"
+  },
+  "keywords": [
+    "pirov2-plugins",
+    "pirov2-walky",
+    "walky",
+    "pirov2-walker"
+  ],
+  "author": "Ganesh Shankar Rai",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gnshshraiGit/pirov2-plugins-walky/issues"
+  },
+  "homepage": "https://github.com/gnshshraiGit/pirov2-plugins-walky#readme",
+  "dependencies": {
+    "pigpio": "^1.2.3"
+  }
+}
