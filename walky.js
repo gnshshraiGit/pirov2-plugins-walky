@@ -1,12 +1,30 @@
 var GPIO = require('pigpio').Gpio;
+var mergeJSON = require("merge-json");
 
-module.exports = function(cfg){
-    //Check for config settings
-    if (!cfg){
-        return null;
-    }
+// All default configurations, these will be overwritten by the supplied settings
+var walkyConf = {
+    motor1DirectionOnePin: 5,
+    motor1DirectionTwoPin: 6,
+    motor2DirectionOnePin: 20,
+    motor2DirectionTwoPin: 21,
+    ultraSonicTrigger: 16,
+    ultraSonicReciver: 24,
+    //EventNames
+    goFwdEvent: "goFwd", // Client triggered event to go Forward
+    goBkdEvent: "goBkd", // Client triggered event to go Backward
+    goLftEvent: "goLft", // Client triggered event to go Left
+    goRitEvent: "goRit", // Client triggered event to go Right
+    stopEvent: "stop", // Client triggered event to Stop
+    servingEvent: "serving", // Server triggered event to let client know of socketID controlling walky
+    blockDetectEvent: "blockdetected" // Server triggered event to send the front block distance detected 
+}
+
+module.exports = function(config){
+    config = config || {};
     //Module Initialization
     const MICROSECDONDS_PER_CM = 1e6/34321;
+    //Merge default settings with supplied settings
+    var cfg = mergeJSON.merge(walkyConf, config);
     var walking = false;
     var currServing = null;
     var blockdist = 0;

@@ -1,6 +1,6 @@
 {
   "name": "pirov2-plugins-walky",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Walking plugin for pirov2",
   "main": "walky.js",
   "scripts": {
@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/gnshshraiGit/pirov2-plugins-walky#readme",
   "dependencies": {
-    "pigpio": "^1.2.3"
+    "pigpio": "^1.2.3",
+    "merge-json": "0.1.0-b.3"
   }
 }
