@@ -59,13 +59,13 @@ module.exports = function(config){
     })();  // Self starting function to calculate block distance in Centi meters
     setInterval(() => {
         ultraSonicTrigger.trigger(10, 1); // Set ultrasonic trigger high for 10 microseconds 
-    }, 1000);
+    }, 2000);
     //Module Initialization
     walkyfunc = function(socket){
         console.log("walky connected to " + socket.conn.id);
         setInterval(() => {
             socket.emit(cfg.blockDetectEvent, {blockdistence: blockdist});
-        }, 1000);
+        }, 2000);
         socket.on('disconnect',function(){
             if (socket.conn.id == currServing){
                 walking = false;

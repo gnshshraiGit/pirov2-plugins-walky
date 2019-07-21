@@ -1,6 +1,6 @@
 {
   "name": "pirov2-plugins-walky",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Walking plugin for pirov2",
   "main": "walky.js",
   "scripts": {
